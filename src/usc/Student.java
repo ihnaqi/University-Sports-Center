@@ -24,6 +24,11 @@ public class Student {
     public void setStudentName(String _studentName) {
         this._studentName = _studentName;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" + "_studentID=" + _studentID + ", _studentName=" + _studentName + '}';
+    }
     
     
 }

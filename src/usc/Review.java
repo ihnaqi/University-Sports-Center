@@ -34,5 +34,11 @@ public class Review {
     public void setLesson(Lesson _lesson) {
         this._lesson = _lesson;
     }
+
+    @Override
+    public String toString() {
+        return "Review{" + "_student=" + _student.toString() + ", _lesson=" + _lesson.toString() + ", _rating=" + _rating + '}';
+    }
+    
     
 }
