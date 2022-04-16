@@ -1,24 +1,28 @@
 package usc;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class TimeTable {
-    private Date _lessonDate;
+    private LocalDate _lessonDate;
     private String _timeSlot;
     private ArrayList<Lesson> _lesson;
 
-    public TimeTable(Date _lessonDate, String _timeSlot) {
+    public TimeTable(){
+       this._lesson = new ArrayList<>(); 
+    }
+
+    public TimeTable(LocalDate _lessonDate, String _timeSlot) {
         this._lessonDate = _lessonDate;
         this._timeSlot = _timeSlot;
         this._lesson = new ArrayList<Lesson>();
     }
 
-    public Date getLessonDate() {
+    public LocalDate getLessonDate() {
         return _lessonDate;
     }
 
-    public void setLessonDate(Date _lessonDate) {
+    public void setLessonDate(LocalDate _lessonDate) {
         this._lessonDate = _lessonDate;
     }
 
@@ -44,7 +48,8 @@ public class TimeTable {
 
     @Override
     public String toString() {
-        return "TimeTable{" + "_lessonDate=" + _lessonDate + ", _timeSlot=" + _timeSlot + ", _lesson=" + _lesson.toString() + '}';
+        String formattedDate = _lessonDate.getYear() + "-" + _lessonDate.getMonthValue() + "-" + _lessonDate.getDayOfMonth();
+        return "TimeTable{" + "_lessonDate=" +formattedDate + ", _timeSlot=" + _timeSlot + ", _lesson=" + _lesson.toString() + '}';
     }
     
     

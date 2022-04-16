@@ -1,16 +1,16 @@
 package usc;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Lesson {
     private String _lessonName;
-    private Date _lessonDate;
+    private LocalDate _lessonDate;
     private String _timeSlot;
     private double _lessonFee;
     private int _enrolledMembers;
     private Student [] _enrolledMembersList;
 
-    public Lesson(String _lessonName, Date _lessonDate, String _timeSlot, double _lessonFee) {
+    public Lesson(String _lessonName, LocalDate _lessonDate, String _timeSlot, double _lessonFee) {
         this._lessonName = _lessonName;
         this._lessonDate = _lessonDate;
         this._timeSlot = _timeSlot;
@@ -27,11 +27,11 @@ public class Lesson {
         this._lessonName = _lessonName;
     }
 
-    public Date getLessonDate() {
+    public LocalDate getLessonDate() {
         return _lessonDate;
     }
     
-    public void setLessonDate(Date _lessonDate) {
+    public void setLessonDate(LocalDate _lessonDate) {
         this._lessonDate = _lessonDate;
     }
 
@@ -67,7 +67,8 @@ public class Lesson {
 
     @Override
     public String toString() {
-        return "Lesson{" + "_lessonName=" + _lessonName + ", _lessonDate=" + _lessonDate + ", _timeSlot=" + _timeSlot + ", _lessonFee=" + _lessonFee + ", _enrolledMembers=" + _enrolledMembers + ", _enrolledMembersList=" + _enrolledMembersList + '}';
+        String memList = _enrolledMembersList.toString();
+        return "Lesson{" + "_lessonName=" + _lessonName + ", _lessonDate=" + _lessonDate + ", _timeSlot=" + _timeSlot + ", _lessonFee=" + _lessonFee + ", _enrolledMembers=" + _enrolledMembers + ", _enrolledMembersList=" + memList + '}';
     }
 
    
