@@ -38,18 +38,16 @@ public class TimeTable {
         // The new lesson being added must not have date field and time slot same as any of the already added lessons.
         for(int i = 0; i < _lesson.size(); i ++){
             if(_lesson.get(i).getLessonDate().compareTo(newLesson.getLessonDate()) == 0 && _lesson.get(i).getTimeSlot().compareTo(newLesson.getTimeSlot()) == 0 ){
-                _lesson.add(newLesson);
-            }
-            else{
                 System.err.println("Due to clashes this lesson cannot be added!");
+                return;
             }
         }
+        _lesson.add(newLesson);
     }
 
     @Override
     public String toString() {
-        String formattedDate = _lessonDate.getYear() + "-" + _lessonDate.getMonthValue() + "-" + _lessonDate.getDayOfMonth();
-        return "TimeTable{" + "_lessonDate=" +formattedDate + ", _timeSlot=" + _timeSlot + ", _lesson=" + _lesson.toString() + '}';
+        return "TimeTable{" + "_lesson=" + _lesson.toString() + '}';
     }
     
     

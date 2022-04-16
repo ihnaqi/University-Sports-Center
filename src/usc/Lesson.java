@@ -1,6 +1,7 @@
 package usc;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Lesson {
     private String _lessonName;
@@ -9,6 +10,7 @@ public class Lesson {
     private double _lessonFee;
     private int _enrolledMembers;
     private Student [] _enrolledMembersList;
+    private ArrayList<Review> reviewsList;
 
     public Lesson(String _lessonName, LocalDate _lessonDate, String _timeSlot, double _lessonFee) {
         this._lessonName = _lessonName;
@@ -17,6 +19,7 @@ public class Lesson {
         this._lessonFee = _lessonFee;
         this._enrolledMembers = 0;
         this._enrolledMembersList = new Student[4];
+        this.reviewsList = new ArrayList();
     }
 
     public String getLessonName() {
