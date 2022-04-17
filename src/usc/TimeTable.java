@@ -44,11 +44,5 @@ public class TimeTable {
         }
         _lesson.add(newLesson);
     }
-
-    @Override
-    public String toString() {
-        return "TimeTable{" + "_lesson=" + _lesson.toString() + '}';
-    }
-    
     
 }

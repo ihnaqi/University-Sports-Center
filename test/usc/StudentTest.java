@@ -5,10 +5,6 @@
  */
 package usc;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -27,12 +23,10 @@ public class StudentTest {
     @Test
     public void testGetStudentID() {
         System.out.println("getStudentID");
-        Student instance = null;
-        String expResult = "";
+        Student instance = new Student("BSF234", "Knuth");
+        String expResult = "BSF234";
         String result = instance.getStudentID();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -41,11 +35,13 @@ public class StudentTest {
     @Test
     public void testSetStudentID() {
         System.out.println("setStudentID");
-        String _studentID = "";
-        Student instance = null;
+        String _studentID = "ASF19744";
+        Student instance = new Student("BSF234", "Knuth");
         instance.setStudentID(_studentID);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String expResult = "ASF19744";
+        String result = instance.getStudentID();
+        assertEquals(expResult, result);
+        instance.setStudentID(_studentID);
     }
 
     /**
@@ -54,12 +50,10 @@ public class StudentTest {
     @Test
     public void testGetStudentName() {
         System.out.println("getStudentName");
-        Student instance = null;
-        String expResult = "";
+        Student instance = new Student("BSF234", "Knuth");
+        String expResult = "Knuth";
         String result = instance.getStudentName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -68,11 +62,13 @@ public class StudentTest {
     @Test
     public void testSetStudentName() {
         System.out.println("setStudentName");
-        String _studentName = "";
-        Student instance = null;
+        String _studentName = "Vlar";
+        Student instance = new Student("BSF234", "Knuth");
+        instance.setStudentName("Vlar");
+        String expResult = "Vlar";
+        String result = instance.getStudentName();
+        assertEquals(expResult, result);
         instance.setStudentName(_studentName);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -81,11 +77,11 @@ public class StudentTest {
     @Test
     public void testGiveReview() {
         System.out.println("giveReview");
-        int num = 0;
-        Student instance = null;
+        int num = 3;
+        Student instance = new Student("BSF234", "Knuth");
         instance.giveReview(num);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String result = instance.getReview();
+        assertEquals("OK", result);
     }
 
     /**
@@ -94,26 +90,11 @@ public class StudentTest {
     @Test
     public void testGetReview() {
         System.out.println("getReview");
-        Student instance = null;
-        String expResult = "";
+        int num = 4;
+        Student instance = new Student("BSF234", "Knuth");
+        instance.giveReview(num);
         String result = instance.getReview();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of toString method, of class Student.
-     */
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        Student instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Satisfied", result);
     }
     
 }

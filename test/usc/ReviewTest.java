@@ -5,12 +5,9 @@
  */
 package usc;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.time.LocalDate;
 
 /**
  *
@@ -27,12 +24,14 @@ public class ReviewTest {
     @Test
     public void testGetRating() {
         System.out.println("getRating");
-        Review instance = null;
-        int expResult = 0;
+        LocalDate date = LocalDate.of(2022, 02, 03);
+        Lesson lesson = new Lesson("Music", date, "Morning", 1250.52);
+        Student student00 = new Student("THED1982", "Mary");
+        // student00.giveReview(1);
+        Review instance = new Review(student00, lesson, 4);
+        int expResult = 4;
         int result = instance.getRating();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -41,11 +40,17 @@ public class ReviewTest {
     @Test
     public void testSetRating() {
         System.out.println("setRating");
-        int _rating = 0;
-        Review instance = null;
+        LocalDate date = LocalDate.of(2022, 02, 03);
+        Lesson lesson = new Lesson("Music", date, "Morning", 1250.52);
+        Student student00 = new Student("THED1982", "Mary");
+        Review instance = new Review(student00, lesson, 4);
+        instance.setRating(1);
+        int expResult = 1;
+        int result = instance.getRating();
+        assertEquals(expResult, result);
+        int _rating = 4;
         instance.setRating(_rating);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(4, instance.getRating());
     }
 
     /**
@@ -54,12 +59,13 @@ public class ReviewTest {
     @Test
     public void testGetStudent() {
         System.out.println("getStudent");
-        Review instance = null;
-        Student expResult = null;
+        LocalDate date = LocalDate.of(2022, 02, 03);
+        Lesson lesson = new Lesson("Music", date, "Morning", 1250.52);
+        Student student00 = new Student("THED1982", "Mary");
+        Review instance = new Review(student00, lesson, 4);
+        Student expResult = student00;
         Student result = instance.getStudent();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -68,11 +74,17 @@ public class ReviewTest {
     @Test
     public void testSetStudent() {
         System.out.println("setStudent");
-        Student _student = null;
-        Review instance = null;
+        LocalDate date = LocalDate.of(2022, 02, 03);
+        Lesson lesson = new Lesson("Music", date, "Morning", 1250.52);
+        Student student00 = new Student("THED1982", "Mary");
+        Review instance = new Review(student00, lesson, 4);
+        Student expResult = student00;
+        Student result = instance.getStudent();
+        assertEquals(expResult, result);
+        Student _student = new Student("EDFKJ343", "Martha");
         instance.setStudent(_student);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        expResult = instance.getStudent();
+        assertEquals(_student, expResult);
     }
 
     /**
@@ -81,12 +93,14 @@ public class ReviewTest {
     @Test
     public void testGetLesson() {
         System.out.println("getLesson");
-        Review instance = null;
-        Lesson expResult = null;
+        LocalDate date = LocalDate.of(2022, 02, 03);
+        Lesson lesson = new Lesson("Music", date, "Morning", 1250.52);
+        Student student00 = new Student("THED1982", "Mary");
+        Review instance = new Review(student00, lesson, 4);
+        Lesson expResult = lesson;
         Lesson result = instance.getLesson();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);
     }
 
     /**
@@ -95,25 +109,17 @@ public class ReviewTest {
     @Test
     public void testSetLesson() {
         System.out.println("setLesson");
-        Lesson _lesson = null;
-        Review instance = null;
-        instance.setLesson(_lesson);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of toString method, of class Review.
-     */
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        Review instance = null;
-        String expResult = "";
-        String result = instance.toString();
+        LocalDate date = LocalDate.of(2022, 02, 03);
+        Lesson lesson = new Lesson("Music", date, "Morning", 1250.52);
+        Student student00 = new Student("THED1982", "Mary");
+        Review instance = new Review(student00, lesson, 4);
+        Lesson expResult = lesson;
+        Lesson result = instance.getLesson();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);
+        Lesson _lesson = new Lesson("Dance", date, "Morning", 1250.52);
+        instance.setLesson(_lesson);
+        assertEquals(_lesson, instance.getLesson());
     }
     
 }
