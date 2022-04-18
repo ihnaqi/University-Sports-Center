@@ -45,4 +45,7 @@ public class TimeTable {
         _lesson.add(newLesson);
     }
     
+    public ArrayList getLessionList(){
+        return this._lesson;
+    }
 }

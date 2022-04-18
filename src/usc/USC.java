@@ -14,7 +14,8 @@ public class USC {
         les.registerMember(std);
         tt.addLesson(les);
         System.out.println( tt.toString());
-
+        
+        new TimeTableForm(tt.getLessionList()).setVisible(true);
     }
     
 }
